@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: mysql -e "SHOW DATABASES"
+    - run: mysql -uroot -proot -e "SHOW DATABASES"
