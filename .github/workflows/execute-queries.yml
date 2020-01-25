@@ -15,3 +15,4 @@ jobs:
       - run: mysql -uroot -proot sandbox -e "SHOW TABLES"
       - run: mysql -uroot -proot sandbox < create-records.sql
       - run: mysql -uroot -proot sandbox -Ns -e "SHOW TABLES" | xargs -I{} mysql -uroot -proot sandbox -e "SELECT * FROM {}"
+      - run: mysql -uroot -proot sandbox -e "SHOW TABLE STATUS"
