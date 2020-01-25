@@ -10,6 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: mysql -uroot -proot -e "SHOW DATABASES"
-      - run: mysql -uroot -proot < create_database.sql
+      - run: mysql -uroot -proot < create_databases.sql
       - run: mysql -uroot -proot sandbox < create_tables.sql
       - run: mysql -uroot -proot sandbox -e "SHOW TABLES"
