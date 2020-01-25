@@ -13,3 +13,5 @@ jobs:
       - run: mysql -uroot -proot < create-databases.sql
       - run: mysql -uroot -proot sandbox < create-tables.sql
       - run: mysql -uroot -proot sandbox -e "SHOW TABLES"
+      - run: mysql -uroot -proot sandbox < create-records.sql
+      - run: mysql -uroot -proot sandbox -e "SELECT * FROM players; SELECT * FROM twitter-users"
