@@ -1,0 +1,11 @@
+name: Execute queries
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - run: mysql -e "SHOW DATABASES"
