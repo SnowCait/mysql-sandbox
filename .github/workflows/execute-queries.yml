@@ -9,7 +9,5 @@ jobs:
 
     steps:
     - run: mysql -uroot -proot -e "SHOW DATABASES"
-    - run: |
-        mysql -uroot -proot
-        SHOW DATABASES;
-        exit;
+    - run: mysql -uroot -proot -e "CREATE DATABASE sandbox"
+    - run: mysql -uroot -proot sandbox -e "SHOW TABLES"
