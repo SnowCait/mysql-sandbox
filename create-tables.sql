@@ -6,7 +6,7 @@ CREATE TABLE `players` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `twitterusers` (
+CREATE TABLE `twitter_users` (
   `id` BIGINT UNSIGNED NOT NULL,
   `screen_name` VARCHAR(15) NOT NULL,
   `player_id` BIGINT UNSIGNED NOT NULL,
