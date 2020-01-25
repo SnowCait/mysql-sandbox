@@ -9,3 +9,7 @@ jobs:
 
     steps:
     - run: mysql -uroot -proot -e "SHOW DATABASES"
+    - run: |
+        mysql -uroot -proot
+        SHOW DATABASES;
+        exit;
