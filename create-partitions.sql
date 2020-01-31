@@ -1,3 +1,6 @@
+-- パーティションと外部キーは同時に定義できないので外部キーを削除する
+ALTER TABLE `log_player_names` DROP FOREIGN KEY `player_id`;
+
 ALTER TABLE `log_player_names` PARTITION BY RANGE COLUMNS(`created_at`) (
   PARTITION p202001 VALUES LESS THAN ('2020-02-01'),
   PARTITION p202002 VALUES LESS THAN ('2020-03-01'),
