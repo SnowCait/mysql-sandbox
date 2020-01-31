@@ -8,12 +8,23 @@ INSERT INTO `log_player_names` (`player_id`, `name`) VALUES (@player_id, @player
 
 COMMIT;
 
+
 BEGIN;
 
-SET @player_name = 'user2_from_line';
+SET @player_name = 'user2_by_line';
 INSERT INTO `players` (`name`) VALUES (@player_name);
 SET @player_id = LAST_INSERT_ID();
 INSERT INTO `line_users` (`id`, `player_id`) VALUES (456, @player_id);
+INSERT INTO `log_player_names` (`player_id`, `name`) VALUES (@player_id, @player_name);
+
+COMMIT;
+
+
+BEGIN;
+
+SET @player_id = 2;
+SET @player_name = 'user2_from_line';
+UPDATE `players` SET `name` = @player_name WHERE `id` = @player_id;
 INSERT INTO `log_player_names` (`player_id`, `name`) VALUES (@player_id, @player_name);
 
 COMMIT;
