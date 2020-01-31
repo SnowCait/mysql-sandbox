@@ -5,6 +5,8 @@ ALTER TABLE `log_player_names`
   DROP FOREIGN KEY `log_player_names_ibfk_1`;
 
 -- パーティションのカラムは主キーに含まれないといけない
+-- 含まれていないと下記のエラーが出る
+-- ERROR 1503 (HY000) at line 6: A PRIMARY KEY must include all columns in the table's partitioning function
 ALTER TABLE `log_player_names`
   DROP PRIMARY KEY,
   ADD PRIMARY KEY (`id`, `created_at`);
