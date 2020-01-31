@@ -9,6 +9,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - run: mysql -uroot -proot -e "SELECT @@version"
       - run: mysql -uroot -proot -e "SHOW DATABASES"
       - run: mysql -uroot -proot < create-databases.sql
       - run: mysql -uroot -proot sandbox < create-tables.sql
