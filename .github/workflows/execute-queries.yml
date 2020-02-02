@@ -25,4 +25,5 @@ jobs:
       - run: mysql -uroot -proot sandbox < add-partitions.sql
       - run: mysql -uroot -proot sandbox < show-partitions.sql
       - run: mysql -uroot -proot sandbox -e "SHOW CREATE TABLE log_player_names"
+      - run: mysql -uroot -proot sandbox -e "SELECT * FROM `information_schema`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'sandbox'"
       - run: php generate-dto.php
