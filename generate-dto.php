@@ -25,7 +25,7 @@ foreach($stmt as $row) {
 }
 
 // DTO (Data Transfer Object) の生成
-$stmt = $pdo->prepare('SELECT * FROM `information_schema`.`COLUMNS` WHERE `TABLE_SCHEMA` = \':schema\'');
+$stmt = $pdo->prepare('SELECT * FROM `information_schema`.`COLUMNS` WHERE `TABLE_SCHEMA` = :schema');
 $stmt->bindValue(':schema', $dbname, PDO::PARAM_STR);
 $stmt->execute();
 $columns = [];
