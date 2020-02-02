@@ -53,7 +53,7 @@ CREATE TABLE `log_friendships` (
 	`followed` BIGINT UNSIGNED NOT NULL, # 8 bytes
 	`action` TINYINT UNSIGNED NOT NULL, # 1 byte # 1:フォロー, 2:解除
 	`created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	PRIMARY KEY (`id`),
+	PRIMARY KEY (`id`, `created_at`),
 	KEY (`followed`, `following`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 PARTITION BY RANGE COLUMNS (`created_at`) (
