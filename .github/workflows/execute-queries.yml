@@ -25,4 +25,4 @@ jobs:
       - run: mysql -uroot -proot sandbox < add-partitions.sql
       - run: mysql -uroot -proot sandbox < show-partitions.sql
       - run: mysql -uroot -proot sandbox -e "SHOW CREATE TABLE log_player_names"
-      - run: php generate-dao.php
+      - run: php generate-dto.php
