@@ -64,7 +64,7 @@ PARTITION BY RANGE COLUMNS (`created_at`) (
 
 DELIMITER |
 
-CREATE TRIGGER `logging_friendships`
+CREATE TRIGGER `logging_friendships_inserted`
   AFTER INSERT ON `friendships`
   FOR EACH ROW
   BEGIN
@@ -72,7 +72,7 @@ CREATE TRIGGER `logging_friendships`
       VALUES (NEW.`following`, NEW.`followed`, 1);
   END;|
 
-CREATE TRIGGER `logging_friendships`
+CREATE TRIGGER `logging_friendships_deleted`
   AFTER DELETE ON `friendships`
   FOR EACH ROW
   BEGIN
