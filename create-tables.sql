@@ -37,7 +37,7 @@ CREATE TABLE `log_player_names` (
     REFERENCES `players`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- friendships
+-- Friendships
 CREATE TABLE `friendships` (
 	`following` BIGINT UNSIGNED NOT NULL, # 8 bytes
 	`followed` BIGINT UNSIGNED NOT NULL, # 8 bytes
@@ -61,3 +61,23 @@ PARTITION BY RANGE COLUMNS (`created_at`) (
 	PARTITION p202002 VALUES LESS THAN ('2019-03-01'),
 	PARTITION pmax VALUES LESS THAN MAXVALUE
 );
+
+DELIMITER |
+
+CREATE TRIGGER `logging_friendships`
+  AFTER INSERT ON `friendships`
+  FOR EACH ROW
+  BEGIN
+    INSERT INTO `log_friendships` (`following`, `followed`, `action`)
+      VALUES (NEW.`following`, NEW.`followed`, 1);
+  END;|
+
+CREATE TRIGGER `logging_friendships`
+  AFTER DELETE ON `friendships`
+  FOR EACH ROW
+  BEGIN
+    INSERT INTO `log_friendships` (`following`, `followed`, `action`)
+      VALUES (OLD.`following`, OLD.`followed`, 2);
+  END;|
+
+DELIMITER ;
