@@ -1,5 +1,5 @@
 -- Accounts
-CREATE TABLE `players` (
+CREATE TABLE `users` (
   `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT, # 8 bytes
   `name` VARCHAR(20) NOT NULL, # L+1 bytes
   `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, # 5 bytes
@@ -14,7 +14,7 @@ CREATE TABLE `twitter_accounts` (
   `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, # 5 bytes
   PRIMARY KEY (`id`),
   FOREIGN KEY (`player_id`) # 8 bytes
-    REFERENCES `players`(`id`)
+    REFERENCES `users`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `line_accounts` (
@@ -24,7 +24,7 @@ CREATE TABLE `line_accounts` (
   `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, # 5 bytes
   PRIMARY KEY (`id`),
   FOREIGN KEY (`player_id`) # 8 bytes
-    REFERENCES `players`(`id`)
+    REFERENCES `users`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `log_player_names` (
@@ -34,7 +34,7 @@ CREATE TABLE `log_player_names` (
   `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, # 5 bytes
   PRIMARY KEY (`id`),
   FOREIGN KEY (`player_id`) # 8 bytes
-    REFERENCES `players`(`id`)
+    REFERENCES `users`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Friendships
