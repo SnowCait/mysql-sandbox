@@ -81,3 +81,13 @@ CREATE TRIGGER `logging_friendships_deleted`
   END;|
 
 DELIMITER ;
+
+
+-- Tweets
+CREATE TABLE `tweets` (
+	`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT, # 8 bytes
+	`user_id` BIGINT UNSIGNED NOT NULL, # 8 bytes
+	`body` JSON NOT NULL, # LONGBLOB や LONGTEXT と同じ: L + 4 バイト、ここで L < 2^32
+	`created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, # 5 bytes
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -63,3 +63,12 @@ BEGIN;
 INSERT INTO `friendships` (`following`, `followed`) VALUES (1, 3);
 
 COMMIT;
+
+
+-- Tweets
+
+BEGIN;
+
+INSERT INTO `tweets` (`user_id`, `body`) VALUES (1, '{"text": ""}');
+
+COMMIT;
