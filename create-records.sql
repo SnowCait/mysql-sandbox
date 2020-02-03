@@ -3,9 +3,9 @@ BEGIN;
 
 SET @player_name = 'user1_from_twitter';
 INSERT INTO `users` (`name`) VALUES (@player_name);
-SET @player_id = LAST_INSERT_ID();
-INSERT INTO `twitter_accounts` (`id`, `player_id`) VALUES (123, @player_id);
-INSERT INTO `log_player_names` (`player_id`, `name`) VALUES (@player_id, @player_name);
+SET @user_id = LAST_INSERT_ID();
+INSERT INTO `twitter_accounts` (`id`, `user_id`) VALUES (123, @user_id);
+INSERT INTO `log_player_names` (`user_id`, `name`) VALUES (@user_id, @player_name);
 
 COMMIT;
 
@@ -14,19 +14,19 @@ BEGIN;
 
 SET @player_name = 'user2_by_line';
 INSERT INTO `users` (`name`) VALUES (@player_name);
-SET @player_id = LAST_INSERT_ID();
-INSERT INTO `line_accounts` (`id`, `player_id`) VALUES (456, @player_id);
-INSERT INTO `log_player_names` (`player_id`, `name`) VALUES (@player_id, @player_name);
+SET @user_id = LAST_INSERT_ID();
+INSERT INTO `line_accounts` (`id`, `user_id`) VALUES (456, @user_id);
+INSERT INTO `log_player_names` (`user_id`, `name`) VALUES (@user_id, @player_name);
 
 COMMIT;
 
 
 BEGIN;
 
-SET @player_id = 2;
+SET @user_id = 2;
 SET @player_name = 'user2_from_line';
-UPDATE `users` SET `name` = @player_name WHERE `id` = @player_id;
-INSERT INTO `log_player_names` (`player_id`, `name`) VALUES (@player_id, @player_name);
+UPDATE `users` SET `name` = @player_name WHERE `id` = @user_id;
+INSERT INTO `log_player_names` (`user_id`, `name`) VALUES (@user_id, @player_name);
 
 COMMIT;
 
@@ -35,9 +35,9 @@ BEGIN;
 
 SET @player_name = 'user3_from_twitter';
 INSERT INTO `users` (`name`) VALUES (@player_name);
-SET @player_id = LAST_INSERT_ID();
-INSERT INTO `twitter_accounts` (`id`, `player_id`) VALUES (789, @player_id);
-INSERT INTO `log_player_names` (`player_id`, `name`) VALUES (@player_id, @player_name);
+SET @user_id = LAST_INSERT_ID();
+INSERT INTO `twitter_accounts` (`id`, `user_id`) VALUES (789, @user_id);
+INSERT INTO `log_player_names` (`user_id`, `name`) VALUES (@user_id, @player_name);
 
 COMMIT;
 
