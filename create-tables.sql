@@ -7,7 +7,7 @@ CREATE TABLE `players` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `twitter_users` (
+CREATE TABLE `twitter_accounts` (
   `id` BIGINT UNSIGNED NOT NULL, # 8 bytes
   `player_id` BIGINT UNSIGNED NOT NULL, # 8 bytes
   `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, # 5 bytes
@@ -17,7 +17,7 @@ CREATE TABLE `twitter_users` (
     REFERENCES `players`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `line_users` (
+CREATE TABLE `line_accounts` (
   `id` BIGINT UNSIGNED NOT NULL, # 8 bytes
   `player_id` BIGINT UNSIGNED NOT NULL, # 8 bytes
   `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, # 5 bytes
