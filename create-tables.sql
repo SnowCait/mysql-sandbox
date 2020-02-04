@@ -89,5 +89,7 @@ CREATE TABLE `tweets` (
 	`user_id` BIGINT UNSIGNED NOT NULL, # 8 bytes
 	`body` JSON NOT NULL, # LONGBLOB や LONGTEXT と同じ: L + 4 バイト、ここで L < 2^32
 	`created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, # 5 bytes
-	PRIMARY KEY (`id`)
+	PRIMARY KEY (`id`),
+  FOREIGN KEY `user_id` (`user_id`) # 8 bytes
+    REFERENCES `users`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
