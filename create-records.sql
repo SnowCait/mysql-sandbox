@@ -69,6 +69,21 @@ COMMIT;
 
 BEGIN;
 
-INSERT INTO `tweets` (`user_id`, `body`) VALUES (1, '{"text": ""}');
+INSERT INTO `tweets` (`user_id`, `body`) VALUES (1, '{"text": "user1-tweet1"}');
+
+COMMIT;
+
+
+BEGIN;
+
+INSERT INTO `tweets` (`user_id`, `body`) VALUES
+  (1, '{"text": "user1-tweet2"}'),
+  (1, '{"text": "user1-tweet3"}'),
+  (2, '{"text": "user2-tweet1"}'),
+  (2, '{"text": "user2-tweet2"}'),
+  (2, '{"text": "user2-tweet3"}'),
+  (3, '{"text": "user3-tweet1"}'),
+  (3, '{"text": "user3-tweet2"}'),
+  (3, '{"text": "user3-tweet3"}');
 
 COMMIT;
