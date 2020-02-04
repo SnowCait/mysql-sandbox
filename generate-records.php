@@ -18,7 +18,7 @@ $pdo = new PDO($dsn, $user, $password, $options);
 $user_values = [];
 $tweet_values = [];
 for ($user = 1; $user <= 100; $user++) {
-    for ($tweet = 1; $tweet <= 10; $tweet++) {
+    for ($tweet = 1; $tweet <= 100; $tweet++) {
         $user_values[] = "('user{$user}')";
         $tweet_values[] = "({$user}, '{\"text\": \"user{$user}-tweet{$tweet}\"}')";
     }
@@ -30,3 +30,7 @@ $pdo->exec('SET FOREIGN_KEY_CHECKS=0;TRUNCATE `tweets`;SET FOREIGN_KEY_CHECKS=1;
 $pdo->exec('SET FOREIGN_KEY_CHECKS=0;TRUNCATE `users`;SET FOREIGN_KEY_CHECKS=1;');
 $pdo->exec($users_sql);
 $pdo->exec($tweets_sql);
+
+for ($i = 0; $i < 1000; $i++) {
+    $pdo->exec('INSERT IGNORE INTO `friendships` (`following`, `followed`) VALUES (CEIL(RAND() * 100), CEIL(RAND() * 100))');
+}
