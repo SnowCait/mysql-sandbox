@@ -1,0 +1,16 @@
+name: sqlcheck
+
+on: [pull_request]
+
+jobs:
+  sqlcheck:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: yokawasa/action-sqlcheck@v0.0.5
+      with:
+        post-comment: true
+        risk-level: 1
+        token: ${{ secrets.GITHUB_TOKEN }}
