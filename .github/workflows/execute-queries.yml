@@ -31,5 +31,6 @@ jobs:
       - name: Install Random data generator
         run: |
           wget https://github.com/Percona-Lab/mysql_random_data_load/releases/download/v0.1.12/mysql_random_data_load_0.1.12_Linux_x86_64.tar.gz
+          tar -zxvf mysql_random_data_load_0.1.12_Linux_x86_64.tar.gz
           ls -l
 
