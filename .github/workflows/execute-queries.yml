@@ -8,22 +8,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - run: mysql -uroot -proot -e "SELECT @@version"
-      - run: mysql -uroot -proot -e "SHOW DATABASES"
-      - run: mysql -uroot -proot < create-databases.sql
-      - run: mysql -uroot -proot sandbox < create-tables.sql
-      - run: mysql -uroot -proot sandbox -e "SHOW TABLES"
-      - run: mysql -uroot -proot sandbox -e "SHOW TRIGGERS\G"
-      - run: mysql -uroot -proot sandbox < create-records.sql
-      - run: mysql -uroot -proot sandbox -Ns -e "SHOW TABLES" | xargs -I{} mysql -uroot -proot sandbox -e "DESC {}"
-      - run: mysql -uroot -proot sandbox -Ns -e "SHOW TABLES" | xargs -I{} mysql -uroot -proot sandbox -e "SHOW INDEX FROM {}"
-      - run: mysql -uroot -proot sandbox -Ns -e "SHOW TABLES" | xargs -I{} mysql -uroot -proot sandbox -e "SELECT * FROM {}"
-      - run: mysql -uroot -proot sandbox -e "SHOW TABLE STATUS"
-      - run: mysql -uroot -proot sandbox < create-partitions.sql
-      - run: mysql -uroot -proot sandbox < show-partitions.sql
-      - run: mysql -uroot -proot sandbox < add-partitions.sql
-      - run: mysql -uroot -proot sandbox < show-partitions.sql
-      - run: mysql -uroot -proot sandbox -e "SHOW CREATE TABLE log_player_names"
-      - run: mysql -uroot -proot sandbox -e "SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = 'sandbox'"
-      - run: php generate-dto.php
+      # - uses: actions/checkout@v2
+      # - run: mysql -uroot -proot -e "SELECT @@version"
+      # - run: mysql -uroot -proot -e "SHOW DATABASES"
+      # - run: mysql -uroot -proot < create-databases.sql
+      # - run: mysql -uroot -proot sandbox < create-tables.sql
+      # - run: mysql -uroot -proot sandbox -e "SHOW TABLES"
+      # - run: mysql -uroot -proot sandbox -e "SHOW TRIGGERS\G"
+      # - run: mysql -uroot -proot sandbox < create-records.sql
+      # - run: mysql -uroot -proot sandbox -Ns -e "SHOW TABLES" | xargs -I{} mysql -uroot -proot sandbox -e "DESC {}"
+      # - run: mysql -uroot -proot sandbox -Ns -e "SHOW TABLES" | xargs -I{} mysql -uroot -proot sandbox -e "SHOW INDEX FROM {}"
+      # - run: mysql -uroot -proot sandbox -Ns -e "SHOW TABLES" | xargs -I{} mysql -uroot -proot sandbox -e "SELECT * FROM {}"
+      # - run: mysql -uroot -proot sandbox -e "SHOW TABLE STATUS"
+      # - run: mysql -uroot -proot sandbox < create-partitions.sql
+      # - run: mysql -uroot -proot sandbox < show-partitions.sql
+      # - run: mysql -uroot -proot sandbox < add-partitions.sql
+      # - run: mysql -uroot -proot sandbox < show-partitions.sql
+      # - run: mysql -uroot -proot sandbox -e "SHOW CREATE TABLE log_player_names"
+      # - run: mysql -uroot -proot sandbox -e "SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = 'sandbox'"
+      # - run: php generate-dto.php
+
+      - name: Install Random data generator
+        run: |
+          wget https://github.com/Percona-Lab/mysql_random_data_load/releases/download/v0.1.12/mysql_random_data_load_0.1.12_Linux_x86_64.tar.gz
+          ls -l
+
