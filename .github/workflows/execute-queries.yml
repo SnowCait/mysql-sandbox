@@ -21,7 +21,7 @@ jobs:
       - run: mysql -uroot -proot sandbox -Ns -e "SHOW TABLES" | xargs -I{} mysql -uroot -proot sandbox -e "SHOW INDEX FROM {}"
       - run: mysql -uroot -proot sandbox -Ns -e "SHOW TABLES" | xargs -I{} mysql -uroot -proot sandbox -e "SELECT * FROM {}"
       - run: mysql -uroot -proot sandbox -e "SHOW TABLE STATUS"
-      - run: mysql -uroot -proot sandbox < create-partitions.sql
+      - run: mysql -uroot -proot --verbose sandbox < create-partitions.sql
       - run: mysql -uroot -proot sandbox < show-partitions.sql
       - run: mysql -uroot -proot sandbox < add-partitions.sql
       - run: mysql -uroot -proot sandbox < show-partitions.sql
