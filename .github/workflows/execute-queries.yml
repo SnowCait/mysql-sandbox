@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - run: sudo systemctl start mysql.service
       - uses: actions/checkout@v2
       - run: mysql -uroot -proot -e "SELECT @@version"
       - run: mysql -uroot -proot -e "SHOW DATABASES"
