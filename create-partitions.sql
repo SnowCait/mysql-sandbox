@@ -11,6 +11,7 @@ ALTER TABLE `log_player_names`
   DROP PRIMARY KEY,
   ADD PRIMARY KEY (`id`, `created_at`);
 
+-- ADD PARTITION するので pmax は定義しない
 ALTER TABLE `log_player_names` PARTITION BY RANGE COLUMNS(`created_at`) (
   PARTITION p2020 VALUES LESS THAN ('2021-01-01'),
   PARTITION p2021 VALUES LESS THAN ('2022-01-01'),
