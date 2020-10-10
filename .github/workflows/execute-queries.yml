@@ -28,5 +28,13 @@ jobs:
       - run: mysql -uroot -proot sandbox -e "SHOW CREATE TABLE log_player_names"
       - run: mysql -uroot -proot sandbox -e "SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = 'sandbox'"
       - run: php generate-dto.php
+
       - run: mysqldump -uroot -proot --single-transaction sandbox > dump.sql
       - run: cat dump.sql
+      - name: git commit
+        run: |
+          git config user.name SnowCait
+          git config user.email example@example.com
+          git add dump.sql
+          git commit -m "dump.sql"
+          git push
