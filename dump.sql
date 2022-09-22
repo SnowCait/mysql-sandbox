@@ -38,7 +38,7 @@ CREATE TABLE `friendships` (
 
 LOCK TABLES `friendships` WRITE;
 /*!40000 ALTER TABLE `friendships` DISABLE KEYS */;
-INSERT INTO `friendships` VALUES (1,2,'2022-09-22 17:05:50'),(1,3,'2022-09-22 17:05:50'),(2,1,'2022-09-22 17:05:50');
+INSERT INTO `friendships` VALUES (1,2,'2022-09-22 17:07:05'),(1,3,'2022-09-22 17:07:05'),(2,1,'2022-09-22 17:07:05');
 /*!40000 ALTER TABLE `friendships` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -102,7 +102,7 @@ CREATE TABLE `line_accounts` (
 
 LOCK TABLES `line_accounts` WRITE;
 /*!40000 ALTER TABLE `line_accounts` DISABLE KEYS */;
-INSERT INTO `line_accounts` VALUES (456,2,'2022-09-22 17:05:50','2022-09-22 17:05:50');
+INSERT INTO `line_accounts` VALUES (456,2,'2022-09-22 17:07:05','2022-09-22 17:07:05');
 /*!40000 ALTER TABLE `line_accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -135,7 +135,7 @@ CREATE TABLE `log_friendships` (
 
 LOCK TABLES `log_friendships` WRITE;
 /*!40000 ALTER TABLE `log_friendships` DISABLE KEYS */;
-INSERT INTO `log_friendships` VALUES (1,1,2,1,'2022-09-22 17:05:50'),(2,2,1,1,'2022-09-22 17:05:50'),(3,1,3,1,'2022-09-22 17:05:50');
+INSERT INTO `log_friendships` VALUES (1,1,2,1,'2022-09-22 17:07:05'),(2,2,1,1,'2022-09-22 17:07:05'),(3,1,3,1,'2022-09-22 17:07:05');
 /*!40000 ALTER TABLE `log_friendships` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -168,7 +168,7 @@ CREATE TABLE `log_player_names` (
 
 LOCK TABLES `log_player_names` WRITE;
 /*!40000 ALTER TABLE `log_player_names` DISABLE KEYS */;
-INSERT INTO `log_player_names` VALUES (1,1,'user1_from_twitter','2022-09-22 17:05:50'),(2,2,'user2_by_line','2022-09-22 17:05:50'),(3,2,'user2_from_line','2022-09-22 17:05:50'),(4,3,'user3_from_twitter','2022-09-22 17:05:50');
+INSERT INTO `log_player_names` VALUES (1,1,'user1_from_twitter','2022-09-22 17:07:05'),(2,2,'user2_by_line','2022-09-22 17:07:05'),(3,2,'user2_from_line','2022-09-22 17:07:05'),(4,3,'user3_from_twitter','2022-09-22 17:07:05');
 /*!40000 ALTER TABLE `log_player_names` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -196,7 +196,7 @@ CREATE TABLE `tweets` (
 
 LOCK TABLES `tweets` WRITE;
 /*!40000 ALTER TABLE `tweets` DISABLE KEYS */;
-INSERT INTO `tweets` VALUES (1,1,'{\"text\": \"user1-tweet1\"}','2022-09-22 17:05:50'),(2,1,'{\"text\": \"user1-tweet2\"}','2022-09-22 17:05:50'),(3,1,'{\"text\": \"user1-tweet3\"}','2022-09-22 17:05:50'),(4,2,'{\"text\": \"user2-tweet1\"}','2022-09-22 17:05:50'),(5,2,'{\"text\": \"user2-tweet2\"}','2022-09-22 17:05:50'),(6,2,'{\"text\": \"user2-tweet3\"}','2022-09-22 17:05:50'),(7,3,'{\"text\": \"user3-tweet1\"}','2022-09-22 17:05:50'),(8,3,'{\"text\": \"user3-tweet2\"}','2022-09-22 17:05:50'),(9,3,'{\"text\": \"user3-tweet3\"}','2022-09-22 17:05:50');
+INSERT INTO `tweets` VALUES (1,1,'{\"text\": \"user1-tweet1\"}','2022-09-22 17:07:05'),(2,1,'{\"text\": \"user1-tweet2\"}','2022-09-22 17:07:05'),(3,1,'{\"text\": \"user1-tweet3\"}','2022-09-22 17:07:05'),(4,2,'{\"text\": \"user2-tweet1\"}','2022-09-22 17:07:05'),(5,2,'{\"text\": \"user2-tweet2\"}','2022-09-22 17:07:05'),(6,2,'{\"text\": \"user2-tweet3\"}','2022-09-22 17:07:05'),(7,3,'{\"text\": \"user3-tweet1\"}','2022-09-22 17:07:05'),(8,3,'{\"text\": \"user3-tweet2\"}','2022-09-22 17:07:05'),(9,3,'{\"text\": \"user3-tweet3\"}','2022-09-22 17:07:05');
 /*!40000 ALTER TABLE `tweets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -224,7 +224,7 @@ CREATE TABLE `twitter_accounts` (
 
 LOCK TABLES `twitter_accounts` WRITE;
 /*!40000 ALTER TABLE `twitter_accounts` DISABLE KEYS */;
-INSERT INTO `twitter_accounts` VALUES (123,1,'2022-09-22 17:05:50','2022-09-22 17:05:50'),(789,3,'2022-09-22 17:05:50','2022-09-22 17:05:50');
+INSERT INTO `twitter_accounts` VALUES (123,1,'2022-09-22 17:07:05','2022-09-22 17:07:05'),(789,3,'2022-09-22 17:07:05','2022-09-22 17:07:05');
 /*!40000 ALTER TABLE `twitter_accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -250,7 +250,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'user1_from_twitter','2022-09-22 17:05:50','2022-09-22 17:05:50'),(2,'user2_from_line','2022-09-22 17:05:50','2022-09-22 17:05:50'),(3,'user3_from_twitter','2022-09-22 17:05:50','2022-09-22 17:05:50');
+INSERT INTO `users` VALUES (1,'user1_from_twitter','2022-09-22 17:07:05','2022-09-22 17:07:05'),(2,'user2_from_line','2022-09-22 17:07:05','2022-09-22 17:07:05'),(3,'user3_from_twitter','2022-09-22 17:07:05','2022-09-22 17:07:05');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -263,4 +263,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-22 17:05:51
+-- Dump completed on 2022-09-22 17:07:06
